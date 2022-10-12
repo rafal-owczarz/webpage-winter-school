@@ -1,0 +1,412 @@
+@import 'variables';
+
+// globals
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Barlow', sans-serif;
+  font-size: clamp(1em, calc(.3em + 1.6vmin), 4em);
+  scroll-behavior: smooth;
+}
+
+:root,
+.page {
+  height: 100%;
+}
+
+.page {
+  overflow-x: hidden;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  list-style: none;
+}
+
+.h2 {
+  padding: 1rem 0;
+  font-size: 2.5rem;
+  line-height: 125%;
+}
+
+.h3 {
+  font-size: 1.25rem;
+  line-height: 125%;
+}
+
+.section {
+  padding: 5%;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+// header
+
+.header {
+  min-height: 100vh;
+  color: #fff;
+  background-image: url(../img/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  &__container {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 2rem 5%;
+    background-color: rgba($color: $color-bg, $alpha: .5);
+  }
+
+  &__hero {
+    position: relative;
+    margin-top: 35vh;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.49);
+    text-align: center;
+
+    &-author {
+      font-size: 1.2rem;
+      text-align: right;
+      line-height: 170%;
+    }
+
+    &-description {
+      margin: 2rem 0;
+    }
+  }
+
+  &__cta-main,
+  &__cta-sec {
+    margin: .7rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+  }
+
+  &__cta-main {
+    background-color: $color-primary;
+    color: $color-bg;
+  }
+
+  &__cta-sec {
+    background-color: $color-tertiary;
+    color: $color-secondary;
+  }
+}
+
+// nav
+
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__logo {
+    position: fixed;
+    left: 5%;
+    top: 5%;
+    z-index: 3;
+
+    &-link {
+      display: flex;
+    }
+
+    &-icon {
+      color: $color-primary;
+      font-size: 2rem;
+      transform: rotate(-20deg);
+    }
+
+    &-title {
+      margin-left: 1rem;
+      color: $color-primary;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform .3s linear;
+    z-index: 2;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  &__element {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity .6s .4s, transform .6s .4s;
+  }
+
+  &__list.active &__element {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__link {
+    color: $color-bg;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+
+  }
+
+  &__burger {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50px;
+    height: 21px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 3;
+
+    &.active &-line {
+      background-color: $color-bg;
+
+      &:nth-child(1) {
+        width: 33%;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+
+    &-line {
+      width: 100%;
+      height: 3px;
+      background-color: $color-primary;
+      transition: background-color .3s linear, width .3s;
+
+      &:nth-child(2) {
+        width: 66%;
+      }
+
+      &:nth-child(3) {
+        width: 33%;
+      }
+    }
+  }
+}
+
+// about
+
+.about {
+  color: $color-bg;
+  text-align: center;
+
+  &__description {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    line-height: 150%;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 2rem;
+  }
+}
+
+// classes
+
+.classes {
+  background-color: $color-bg;
+  color: $color-secondary;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 2.4rem;
+    line-height: 125%;
+  }
+
+  &__description {
+    line-height: 150%;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+}
+
+.courses {
+  position: relative;
+
+  &__title {
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 100%;
+    padding: 2%;
+    color: $color-primary;
+    font-size: 2rem;
+  }
+
+  &__video {
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+  }
+}
+
+// contact
+
+.contact {
+  text-align: center;
+  background-color: $color-secondary;
+  color: $color-bg;
+
+  &__description {
+    margin-bottom: 1.6rem;
+    line-height: 150%;
+  }
+
+  &__form {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    height: fit-content;
+    margin-bottom: 1rem;
+    border: 2px solid $color-bg;
+    background-color: $color-bg;
+    border-radius: .5rem;
+    padding: .8rem 1rem;
+    color: $color-secondary;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: $color-secondary;
+    }
+  }
+
+  &__textarea {
+    height: 15rem;
+  }
+
+  &__btn {
+    width: fit-content;
+    border: none;
+    padding: .8rem 3rem;
+    background-color: $color-primary;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    &:hover {
+      background-color: $color-bg;
+    }
+  }
+}
+
+// footer
+
+.footer {
+  padding: 2rem;
+  background-color: $color-tertiary;
+  color: $color-secondary;
+  font-size: 1.6rem;
+  text-align: center;
+
+  &__text {
+    line-height: 150%;
+  }
+}
+
+// media
+
+@media (min-width: 768px) {
+  .section {
+    padding: 10%;
+  }
+
+  .about {
+    &__container {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    &__description {
+      text-align: left;
+    }
+  }
+
+  .about__img {
+    width: 50%;
+    object-fit: cover;
+  }
+
+  .classes__videos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  .courses {
+    flex-grow: 1;
+    width: 33%;
+  }
+}
+
+@media (min-width: 992px) {
+  .courses {
+    width: 32%;
+  }
+
+  .contact {
+    &__form {
+      flex-direction: row;
+    }
+
+    &__input {
+      width: 49%;
+    }
+
+    &__textarea {
+      width: 100%;
+    }
+
+    &__btn {
+      width: fit-content;
+    }
+  }
+}

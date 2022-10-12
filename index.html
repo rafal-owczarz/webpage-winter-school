@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winter Sports School</title>
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/e01c0f7742.js" crossorigin="anonymous" defer></script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+    integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- js -->
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body class="page">
+  <header class="header">
+    <div class="header__container">
+      <nav class="nav">
+        <div class="nav__logo">
+          <a href="#" class="nav__logo-link link"><i class="nav__logo-icon fa-regular fa-snowflake"></i><span
+              class="nav__logo-title h1">Winter School</span>
+          </a>
+        </div>
+        <button class="nav__burger">
+          <div class="nav__burger-line"></div>
+          <div class="nav__burger-line"></div>
+          <div class="nav__burger-line"></div>
+        </button>
+        <ul class="nav__list list">
+          <li class="nav__element">
+            <a href="#about" class="nav__link link">Our story</a>
+          </li>
+          <li class="nav__element">
+            <a href="#classes" class="nav__link link">Classes</a>
+          </li>
+          <li class="nav__element">
+            <a href="#contact" class="nav__link link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__hero">
+        <h2 class="header__hero-quote h2">'Every mountain top is within reach if you just keep climbing'</h2>
+        <div class="header__hero-author">-- Barry Finlay</div>
+        <h3 class="header__hero-description h3">Get unlimited access to our winter sport classes and find a way to
+          express
+          yourself.</h3>
+        <div class="header__ctas">
+          <button class="header__cta-sec">Start exploring</button>
+          <button class="header__cta-main">Sign up now!</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="about" class="section about">
+    <div class="container about__container">
+      <div class="about__text">
+        <h2 class="h2 about__title">Our Story</h2>
+        <p class="about__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, qui. Cum,
+          nesciunt
+          beatae ipsum enim doloribus, saepe assumenda autem repudiandae dolorum earum asperiores ipsa dolorem
+          perferendis
+          ducimus quod excepturi suscipit.</p>
+      </div>
+      <img class="about__img" src="./img/about.jpg" alt="A man standing on the yop of the mountain">
+    </div>
+  </section>
+  <section id="classes" class="section classes">
+    <div class="container">
+      <div class="classes__text">
+        <h2 class="h2 classes__title">Find something for yourself!</h2>
+        <h3 class="h3 classes__description">Sign up for one of our many courses and learn new winter sports.</h3>
+      </div>
+      <div class="classes__videos">
+        <div class="courses snowboarding">
+          <h3 class="h3 courses__title">Snowboarding</h3>
+          <video src="./img/course1.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+        <div class="courses skiing">
+          <h3 class="h3 courses__title">Skiing</h3>
+          <video src="./img/course2.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+        <div class="courses ice-skating">
+          <h3 class="h3 courses__title">Ice Skating</h3>
+          <video src="./img/course3.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+        <div class="courses ski-jumping">
+          <h3 class="h3 courses__title">Ski Jumping</h3>
+          <video src="./img/course4.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+        <div class="courses figure-skating">
+          <h3 class="h3 courses__title">Figure Skating</h3>
+          <video src="./img/course5.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+        <div class="courses extreme-skiing">
+          <h3 class="h3 courses__title">Extreme Skiing</h3>
+          <video src="./img/course6.mp4" class="courses__video" autoplay muted loop></video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="contact__text">
+        <h2 class="h2 contact__title">Contact Us</h2>
+        <h3 class="h3 contact__description">If you have a questions just contact us! Don't let the unknowns bother you.
+        </h3>
+      </div>
+      <form class="contact__form">
+        <input class="contact__input" type="text" placeholder="Your Name" name="name" id="name" required>
+        <input class="contact__input" type="text" placeholder="Your Surname" name="surname" id="surname" required>
+        <input class="contact__input" type="email" placeholder="Your E-mail" name="mail" id="mail" required>
+        <input class="contact__input" type="tel" placeholder="Your Phone Number" name="phone" id="phone" required>
+        <textarea class="contact__input contact__textarea" name="message" id="message" placeholder="Your Message"
+          required></textarea>
+        <input class="contact__input contact__btn" type="submit" value="Submit">
+
+      </form>
+    </div>
+
+  </section>
+  <footer class="footer">
+    <p class="footer__text">&copy; Winter Sports School 2022 </p>
+  </footer>
+</body>
+
+</html>
