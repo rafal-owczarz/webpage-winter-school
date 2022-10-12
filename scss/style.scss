@@ -12,7 +12,7 @@
 
 :root {
   font-family: 'Barlow', sans-serif;
-  font-size: clamp(1em, calc(.3em + 1.6vmin), 4em);
+  font-size: clamp(.9em, calc(.3em + 1.6vmin), 4em);
   scroll-behavior: smooth;
 }
 
@@ -91,9 +91,10 @@
 
   &__cta-main,
   &__cta-sec {
+    display: inline-flex;
+    line-height: 3.2rem;
     margin: .7rem;
-    padding: 1rem;
-    border: none;
+    padding: 0 1rem;
     border-radius: 1rem;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.2);
     font-size: 1.2rem;
